@@ -5,17 +5,13 @@ namespace NumberGuesser.CLI;
 // Основной класс игры
 public class Game
 {
-    private readonly GameSettings _settings;
-    private readonly NumberGenerator _numberGenerator;
     private readonly IUserInput _userInput;
     private readonly IMessageProvider _messageProvider;
     private readonly IAttemptManager _attemptManager;
     private int _targetNumber;
 
-    public Game(GameSettings settings, NumberGenerator numberGenerator, IUserInput userInput, IMessageProvider messageProvider, IAttemptManager attemptManager)
+    public Game(NumberGenerator numberGenerator, IUserInput userInput, IMessageProvider messageProvider, IAttemptManager attemptManager)
     {
-        _settings = settings;
-        _numberGenerator = numberGenerator;
         _userInput = userInput;
         _messageProvider = messageProvider;
         _attemptManager = attemptManager;

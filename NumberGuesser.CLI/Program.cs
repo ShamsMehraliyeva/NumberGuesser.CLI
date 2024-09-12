@@ -7,7 +7,7 @@ class Program
     static void Main(string[] args)
     {
         // Настройки игры
-        var settings = new GameSettings(lowerBound: 1, upperBound: 100, maxAttempts: 5);
+        var settings = new GameSettings{LowerBound = 1, UpperBound = 100, MaxAttempts = 5};
 
         // Генератор чисел
         var numberGenerator = new NumberGenerator(lowerBound: settings.LowerBound, upperBound: settings.UpperBound);
@@ -22,7 +22,7 @@ class Program
         var attemptManager = new AttemptManager(maxAttempts: settings.MaxAttempts);
 
         // Игра
-        var game = new Game(settings, numberGenerator, userInput, messageProvider, attemptManager);
+        var game = new Game(numberGenerator, userInput, messageProvider, attemptManager);
 
         // Запуск игры
         game.Play();

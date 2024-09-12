@@ -11,7 +11,6 @@ public class AttemptManager : IAttemptManager
     public AttemptManager(int maxAttempts)
     {
         _maxAttempts = maxAttempts;
-        _attempts = 0;
     }
 
     public bool CanAttempt()

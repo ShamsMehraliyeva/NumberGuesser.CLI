@@ -1,15 +1,8 @@
 namespace NumberGuesser.CLI;
 
-public class GameSettings
+public record GameSettings
 {
-    public int LowerBound { get; }
-    public int UpperBound { get; }
-    public int MaxAttempts { get; }
-    
-    public GameSettings(int lowerBound, int upperBound, int maxAttempts)
-    {
-        LowerBound = lowerBound;
-        UpperBound = upperBound;
-        MaxAttempts = maxAttempts;
-    }
+    public int LowerBound { get; set; }
+    public int UpperBound { get; set; }
+    public int MaxAttempts { get; set; }
 }
