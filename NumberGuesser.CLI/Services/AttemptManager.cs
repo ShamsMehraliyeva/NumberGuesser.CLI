@@ -18,8 +18,5 @@ public class AttemptManager : IAttemptManager
         return _attempts < _maxAttempts;
     }
 
-    public void IncrementAttempts()
-    {
-        _attempts++;
-    }
+    public void IncrementAttempts() => _attempts++;
 }

@@ -5,9 +5,9 @@ namespace NumberGuesser.CLI.Services;
 // Класс для получения ввода и отображения сообщений
 public class ConsoleUserService: IUserInput
 {
-    public int GetUserInput()
+    public string GetInput()
     {
         Console.Write("Введите число: ");
-        return int.Parse(Console.ReadLine());
+        return Console.ReadLine();
     }
 }

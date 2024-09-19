@@ -22,22 +22,22 @@ public class Game
     {
         while (_attemptManager.CanAttempt())
         {
-            int guess = _userInput.GetUserInput();
+            int guess = int.Parse(_userInput.GetInput());
             if (guess < _targetNumber)
             {
-                _messageProvider.DisplayMessage("Слишком маленькое число.");
+                _messageProvider.SendMessage("Слишком маленькое число.");
             }
             else if (guess > _targetNumber)
             {
-                _messageProvider.DisplayMessage("Слишком большое число.");
+                _messageProvider.SendMessage("Слишком большое число.");
             }
             else
             {
-                _messageProvider.DisplayMessage("Поздравляем! Вы угадали число.");
+                _messageProvider.SendMessage("Поздравляем! Вы угадали число.");
                 return;
             }
             _attemptManager.IncrementAttempts();
         }
-        _messageProvider.DisplayMessage($"Вы исчерпали все попытки. Правильное число было: {_targetNumber}");
+        _messageProvider.SendMessage($"Вы исчерпали все попытки. Правильное число было: {_targetNumber}");
     }
 }
